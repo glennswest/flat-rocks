@@ -238,6 +238,7 @@
       , 'leveldb-<(ldbversion)/util/statistics.cc'
       , 'leveldb-<(ldbversion)/util/histogram.cc'
       , 'leveldb-<(ldbversion)/util/arena_impl.cc'
+<<<<<<< d72f77a4e566adec983696428cf9ebb4029d180a
 <<<<<<< 58e2a4fd0478c0ab31828237278e56cacb659e44
       , 'leveldb-<(ldbversion)/util/ldb_tool.cc'
 =======
@@ -246,10 +247,14 @@
       , 'leveldb-<(ldbversion)/util/ldb_tool.cc'
 >>>>>>> working rocksdb!
 >>>>>>> working rocksdb!
+=======
+      , 'leveldb-<(ldbversion)/util/ldb_tool.cc'
+>>>>>>> @0.0.0-a04 remove ldb_tool.cc from build
       , 'leveldb-<(ldbversion)/util/coding.cc'
       , 'leveldb-<(ldbversion)/util/perf_context.cc'
       , 'leveldb-<(ldbversion)/util/hash.cc'
       , 'leveldb-<(ldbversion)/util/logging.cc'
+<<<<<<< d72f77a4e566adec983696428cf9ebb4029d180a
 <<<<<<< 58e2a4fd0478c0ab31828237278e56cacb659e44
       , 'leveldb-<(ldbversion)/util/ldb_cmd.cc'
 =======
@@ -258,6 +263,9 @@
       , 'leveldb-<(ldbversion)/util/ldb_cmd.cc'
 >>>>>>> working rocksdb!
 >>>>>>> working rocksdb!
+=======
+      , 'leveldb-<(ldbversion)/util/ldb_cmd.cc'
+>>>>>>> @0.0.0-a04 remove ldb_tool.cc from build
       , 'leveldb-<(ldbversion)/util/hash_skiplist_rep.cc'
       , 'leveldb-<(ldbversion)/util/auto_roll_logger.cc'
       , 'leveldb-<(ldbversion)/util/blob_store.cc'

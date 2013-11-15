@@ -254,6 +254,7 @@
       , 'leveldb-<(ldbversion)/util/perf_context.cc'
       , 'leveldb-<(ldbversion)/util/hash.cc'
       , 'leveldb-<(ldbversion)/util/logging.cc'
+<<<<<<< 2d8031b488a30552fc29d357d34bbd9f627f2a72
 <<<<<<< d72f77a4e566adec983696428cf9ebb4029d180a
 <<<<<<< 58e2a4fd0478c0ab31828237278e56cacb659e44
       , 'leveldb-<(ldbversion)/util/ldb_cmd.cc'
@@ -266,6 +267,8 @@
 =======
       , 'leveldb-<(ldbversion)/util/ldb_cmd.cc'
 >>>>>>> @0.0.0-a04 remove ldb_tool.cc from build
+=======
+>>>>>>> @0.0.0-a05 remove ldb_cmd.cc
       , 'leveldb-<(ldbversion)/util/hash_skiplist_rep.cc'
       , 'leveldb-<(ldbversion)/util/auto_roll_logger.cc'
       , 'leveldb-<(ldbversion)/util/blob_store.cc'

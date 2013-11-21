@@ -182,7 +182,6 @@
       , 'leveldb-<(ldbversion)/db/log_writer.cc'
       , 'leveldb-<(ldbversion)/db/dbformat.cc'
       , 'leveldb-<(ldbversion)/db/write_batch.cc'
-      , 'leveldb-<(ldbversion)/db/table_stats_collector.cc'
       , 'leveldb-<(ldbversion)/db/memtablelist.cc'
       , 'leveldb-<(ldbversion)/db/db_impl.cc'
       , 'leveldb-<(ldbversion)/db/memtable.cc'
@@ -194,6 +193,7 @@
       , 'leveldb-<(ldbversion)/db/filename.cc'
       , 'leveldb-<(ldbversion)/db/db_iter.cc'
       , 'leveldb-<(ldbversion)/db/transaction_log_impl.cc'
+      , 'leveldb-<(ldbversion)/db/table_properties_collector.cc'
       , 'leveldb-<(ldbversion)/helpers/memenv/memenv.cc'
 <<<<<<< ea5999dbd5fddf8f811b6c14162a3282b24ef7a9
       , 'leveldb-<(ldbversion)/helpers/memenv/memenv.h'
@@ -238,6 +238,7 @@
       , 'leveldb-<(ldbversion)/util/statistics.cc'
       , 'leveldb-<(ldbversion)/util/histogram.cc'
       , 'leveldb-<(ldbversion)/util/arena_impl.cc'
+<<<<<<< 55651b75e3443ce0f600464093ed696832723bd1
 <<<<<<< d72f77a4e566adec983696428cf9ebb4029d180a
 <<<<<<< 58e2a4fd0478c0ab31828237278e56cacb659e44
       , 'leveldb-<(ldbversion)/util/ldb_tool.cc'
@@ -250,6 +251,8 @@
 =======
       , 'leveldb-<(ldbversion)/util/ldb_tool.cc'
 >>>>>>> @0.0.0-a04 remove ldb_tool.cc from build
+=======
+>>>>>>> update rocksdb, nan@0.6.0
       , 'leveldb-<(ldbversion)/util/coding.cc'
       , 'leveldb-<(ldbversion)/util/perf_context.cc'
       , 'leveldb-<(ldbversion)/util/hash.cc'

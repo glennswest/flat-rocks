@@ -54,9 +54,6 @@
               }
           }]
         ]
-      , "dependencies": [
-            "<(module_root_dir)/deps/leveldb/leveldb.gyp:leveldb"
-        ]
       , "include_dirs"  : [
             "<!(node -e \"require('nan')\")"
         ]
@@ -69,6 +66,9 @@
           , "src/iterator_async.cc"
           , "src/leveldown.cc"
           , "src/leveldown_async.cc"
-        ]
+        ],
+        "libraries": [
+            "librocksdb.dylib"
+      ]
     }]
 }

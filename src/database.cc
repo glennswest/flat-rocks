@@ -40,7 +40,7 @@ Database::~Database () {
 rocksdb::Status Database::OpenDatabase (
         rocksdb::Options* options
     ) {
-  return rocksdb::DB::Open(*options, location, &db);
+  return rocksdb::DB::Open(*options, **location, &db);
 }
 
 rocksdb::Status Database::PutToDatabase (
@@ -114,14 +114,6 @@ void Database::ReleaseIterator (uint32_t id) {
 void Database::CloseDatabase () {
   delete db;
   db = NULL;
-  if (blockCache) {
-    delete blockCache;
-    blockCache = NULL;
-  }
-  if (filterPolicy) {
-    delete filterPolicy;
-    filterPolicy = NULL;
-  }
 }
 
 /* V8 exposed functions *****************************/

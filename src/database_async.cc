@@ -22,7 +22,7 @@ namespace leveldown {
 OpenWorker::OpenWorker (
     Database *database
   , Nan::Callback *callback
-  , rocksdb::Cache* blockCache
+  , std::shared_ptr<rocksdb::Cache> blockCache
   , const rocksdb::FilterPolicy* filterPolicy
   , bool createIfMissing
   , bool errorIfExists
@@ -42,12 +42,13 @@ OpenWorker::OpenWorker (
   options->write_buffer_size      = writeBufferSize;
 
   options->max_open_files         = maxOpenFiles;
-  options->block_restart_interval = blockRestartInterval;
-  options->filter_policy          = filterPolicy;
 
   rocksdb::BlockBasedTableOptions table_options;
   table_options.block_cache       = blockCache;
   table_options.block_size        = blockSize;
+  table_options.block_restart_interval = blockRestartInterval;
+
+  table_options.filter_policy.reset(filterPolicy);
 
   options->table_factory.reset(NewBlockBasedTableFactory(table_options));
 };

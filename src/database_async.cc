@@ -8,6 +8,7 @@
 
 #include <rocksdb/write_batch.h>
 #include <rocksdb/filter_policy.h>
+#include <rocksdb/table.h>
 
 #include "database.h"
 #include "leveldown.h"
@@ -22,7 +23,7 @@ OpenWorker::OpenWorker (
     Database *database
   , Nan::Callback *callback
   , std::shared_ptr<rocksdb::Cache> blockCache
-  , const rocksdb::FilterPolicy* filterPolicy
+  , std::shared_ptr<const rocksdb::FilterPolicy> filterPolicy
   , bool createIfMissing
   , bool errorIfExists
   , bool compression
@@ -33,17 +34,24 @@ OpenWorker::OpenWorker (
 ) : AsyncWorker(database, callback)
 {
   options = new rocksdb::Options();
-  options->block_cache            = blockCache;
-  options->filter_policy          = filterPolicy;
+  rocksdb::BlockBasedTableOptions table_options;
+
+  table_options.block_cache       = blockCache;
+  table_options.filter_policy     = filterPolicy;
+  table_options.block_size        = blockSize;
+  table_options.block_restart_interval = blockRestartInterval;
+
   options->create_if_missing      = createIfMissing;
   options->error_if_exists        = errorIfExists;
+
   options->compression            = compression
       ? rocksdb::kSnappyCompression
       : rocksdb::kNoCompression;
+
   options->write_buffer_size      = writeBufferSize;
-  options->block_size             = blockSize;
   options->max_open_files         = maxOpenFiles;
-  options->block_restart_interval = blockRestartInterval;
+
+  options->table_factory.reset(rocksdb::NewBlockBasedTableFactory(table_options));
 };
 
 OpenWorker::~OpenWorker () {

@@ -116,11 +116,7 @@ void Database::CloseDatabase () {
   db = NULL;
 
   blockCache = NULL;
-
-  if (filterPolicy) {
-    delete filterPolicy;
-    filterPolicy = NULL;
-  }
+  filterPolicy = NULL;
 }
 
 /* V8 exposed functions *****************************/
@@ -189,7 +185,7 @@ NAN_METHOD(Database::Open) {
   );
 
   database->blockCache = rocksdb::NewLRUCache(cacheSize);
-  database->filterPolicy = rocksdb::NewBloomFilterPolicy(10);
+  database->filterPolicy.reset(rocksdb::NewBloomFilterPolicy(10));
 
   OpenWorker* worker = new OpenWorker(
       database

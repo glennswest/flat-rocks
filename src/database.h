@@ -84,7 +84,7 @@ private:
   uint32_t currentIteratorId;
   void(*pendingCloseWorker);
   std::shared_ptr<rocksdb::Cache> blockCache;
-  const rocksdb::FilterPolicy* filterPolicy;
+  std::shared_ptr<const rocksdb::FilterPolicy> filterPolicy;
 
   std::map< uint32_t, leveldown::Iterator * > iterators;
 

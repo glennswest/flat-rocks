@@ -8,7 +8,7 @@
 #include "leveldown.h"
 #include "leveldown_async.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 /** DESTROY WORKER **/
 
@@ -46,4 +46,4 @@ void RepairWorker::Execute () {
   SetStatus(rocksdb::RepairDB(**location, options));
 }
 
-} // namespace leveldown
+} // namespace flat_rocks

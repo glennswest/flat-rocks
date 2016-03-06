@@ -11,7 +11,7 @@
 #include "async.h"
 #include "iterator_async.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 /** NEXT-MULTI WORKER **/
 
@@ -96,4 +96,4 @@ void EndWorker::HandleOKCallback () {
   callback->Call(0, NULL);
 }
 
-} // namespace leveldown
+} // namespace flat_rocks

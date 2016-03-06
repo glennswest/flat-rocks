@@ -8,7 +8,7 @@
 
 #include "database.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 class Batch : public Nan::ObjectWrap {
 public:
@@ -18,12 +18,12 @@ public:
     , v8::Local<v8::Object> optionsObj
   );
 
-  Batch  (leveldown::Database* database, bool sync);
+  Batch  (flat_rocks::Database* database, bool sync);
   ~Batch ();
   rocksdb::Status Write ();
 
 private:
-  leveldown::Database* database;
+  flat_rocks::Database* database;
   rocksdb::WriteOptions* options;
   rocksdb::WriteBatch* batch;
   bool hasData; // keep track of whether we're writing data or not
@@ -35,6 +35,6 @@ private:
   static NAN_METHOD(Write);
 };
 
-} // namespace leveldown
+} // namespace flat_rocks
 
 #endif

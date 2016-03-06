@@ -18,7 +18,7 @@
 #include "leveldown.h"
 #include "iterator.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 NAN_METHOD(LevelDOWN);
 
@@ -86,7 +86,7 @@ private:
   std::shared_ptr<rocksdb::Cache> blockCache;
   std::shared_ptr<const rocksdb::FilterPolicy> filterPolicy;
 
-  std::map< uint32_t, leveldown::Iterator * > iterators;
+  std::map< uint32_t, flat_rocks::Iterator * > iterators;
 
   static void WriteDoing(uv_work_t *req);
   static void WriteAfter(uv_work_t *req);
@@ -104,6 +104,6 @@ private:
   static NAN_METHOD(GetProperty);
 };
 
-} // namespace leveldown
+} // namespace flat_rocks
 
 #endif

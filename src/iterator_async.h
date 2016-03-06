@@ -12,7 +12,7 @@
 #include "async.h"
 #include "iterator.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 class NextWorker : public AsyncWorker {
 public:
@@ -48,6 +48,6 @@ private:
   Iterator* iterator;
 };
 
-} // namespace leveldown
+} // namespace flat_rocks
 
 #endif

@@ -14,7 +14,7 @@
 #include "database.h"
 #include "async.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 class Database;
 class AsyncWorker;
@@ -93,6 +93,6 @@ private:
   static NAN_METHOD(End);
 };
 
-} // namespace leveldown
+} // namespace flat_rocks
 
 #endif

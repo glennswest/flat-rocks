@@ -10,7 +10,7 @@
 
 #include "async.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 class DestroyWorker : public AsyncWorker {
 public:
@@ -40,6 +40,6 @@ private:
   Nan::Utf8String* location;
 };
 
-} // namespace leveldown
+} // namespace flat_rocks
 
 #endif

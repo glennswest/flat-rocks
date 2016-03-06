@@ -10,14 +10,14 @@
 #include <nan.h>
 #include "database.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 class Database;
 
 /* abstract */ class AsyncWorker : public Nan::AsyncWorker {
 public:
   AsyncWorker (
-      leveldown::Database* database
+      flat_rocks::Database* database
     , Nan::Callback *callback
   ) : Nan::AsyncWorker(callback), database(database) { }
 
@@ -32,6 +32,6 @@ private:
   rocksdb::Status status;
 };
 
-} // namespace leveldown
+} // namespace flat_rocks
 
 #endif

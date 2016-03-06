@@ -17,7 +17,7 @@
 #include "iterator.h"
 #include "common.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 static Nan::Persistent<v8::FunctionTemplate> database_constructor;
 
@@ -228,7 +228,7 @@ NAN_METHOD(Database::Close) {
     database->pendingCloseWorker = worker;
 
     for (
-        std::map< uint32_t, leveldown::Iterator * >::iterator it
+        std::map< uint32_t, flat_rocks::Iterator * >::iterator it
             = database->iterators.begin()
       ; it != database->iterators.end()
       ; ++it) {
@@ -239,7 +239,7 @@ NAN_METHOD(Database::Close) {
         // function and wait for it to hit ReleaseIterator() where our
         // CloseWorker will be invoked
 
-        leveldown::Iterator *iterator = it->second;
+        flat_rocks::Iterator *iterator = it->second;
 
         if (!iterator->ended) {
           v8::Local<v8::Function> end =
@@ -426,8 +426,8 @@ NAN_METHOD(Database::GetProperty) {
 
   LD_STRING_OR_BUFFER_TO_SLICE(property, propertyHandle, property)
 
-  leveldown::Database* database =
-      Nan::ObjectWrap::Unwrap<leveldown::Database>(info.This());
+  flat_rocks::Database* database =
+      Nan::ObjectWrap::Unwrap<flat_rocks::Database>(info.This());
 
   std::string* value = new std::string();
   database->GetPropertyFromDatabase(property, value);
@@ -461,8 +461,8 @@ NAN_METHOD(Database::Iterator) {
     return Nan::ThrowError("Fatal Error in Database::Iterator!");
   }
 
-  leveldown::Iterator *iterator =
-      Nan::ObjectWrap::Unwrap<leveldown::Iterator>(iteratorHandle);
+  flat_rocks::Iterator *iterator =
+      Nan::ObjectWrap::Unwrap<flat_rocks::Iterator>(iteratorHandle);
 
   database->iterators[id] = iterator;
 
@@ -480,4 +480,4 @@ NAN_METHOD(Database::Iterator) {
 }
 
 
-} // namespace leveldown
+} // namespace flat_rocks

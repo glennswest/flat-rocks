@@ -11,7 +11,7 @@
 #include "batch.h"
 #include "leveldown_async.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 NAN_METHOD(DestroyDB) {
   Nan::HandleScope scope;
@@ -51,8 +51,8 @@ NAN_METHOD(RepairDB) {
 
 void Init (v8::Local<v8::Object> target) {
   Database::Init();
-  leveldown::Iterator::Init();
-  leveldown::Batch::Init();
+  flat_rocks::Iterator::Init();
+  flat_rocks::Batch::Init();
 
   v8::Local<v8::Function> leveldown =
       Nan::New<v8::FunctionTemplate>(LevelDOWN)->GetFunction();
@@ -72,4 +72,4 @@ void Init (v8::Local<v8::Object> target) {
 
 NODE_MODULE(leveldown, Init)
 
-} // namespace leveldown
+} // namespace flat_rocks

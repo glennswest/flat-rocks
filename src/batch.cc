@@ -7,11 +7,11 @@
 #include "batch.h"
 #include "common.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 static Nan::Persistent<v8::FunctionTemplate> batch_constructor;
 
-Batch::Batch (leveldown::Database* database, bool sync) : database(database) {
+Batch::Batch (flat_rocks::Database* database, bool sync) : database(database) {
   options = new rocksdb::WriteOptions();
   options->sync = sync;
   batch = new rocksdb::WriteBatch();
@@ -138,4 +138,4 @@ NAN_METHOD(Batch::Write) {
   }
 }
 
-} // namespace leveldown
+} // namespace flat_rocks

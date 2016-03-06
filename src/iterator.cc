@@ -11,7 +11,7 @@
 #include "iterator_async.h"
 #include "common.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 static Nan::Persistent<v8::FunctionTemplate> iterator_constructor;
 
@@ -490,4 +490,4 @@ NAN_METHOD(Iterator::New) {
   info.GetReturnValue().Set(info.This());
 }
 
-} // namespace leveldown
+} // namespace flat_rocks

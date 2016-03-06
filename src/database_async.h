@@ -13,7 +13,7 @@
 
 #include "async.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 class OpenWorker : public AsyncWorker {
 public:
@@ -162,6 +162,6 @@ public:
     uint64_t size;
 };
 
-} // namespace leveldown
+} // namespace flat_rocks
 
 #endif

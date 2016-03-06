@@ -15,7 +15,7 @@
 #include "async.h"
 #include "database_async.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 /** OPEN WORKER **/
 
@@ -275,4 +275,4 @@ void ApproximateSizeWorker::HandleOKCallback () {
   callback->Call(2, argv);
 }
 
-} // namespace leveldown
+} // namespace flat_rocks

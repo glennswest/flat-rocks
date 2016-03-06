@@ -8,7 +8,7 @@
 #include "batch.h"
 #include "batch_async.h"
 
-namespace leveldown {
+namespace flat_rocks {
 
 /** NEXT WORKER **/
 
@@ -25,4 +25,4 @@ void BatchWriteWorker::Execute () {
   SetStatus(batch->Write());
 }
 
-} // namespace leveldown
+} // namespace flat_rocks

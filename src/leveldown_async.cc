@@ -24,8 +24,8 @@ DestroyWorker::~DestroyWorker () {
 }
 
 void DestroyWorker::Execute () {
-  leveldb::Options options;
-  SetStatus(leveldb::DestroyDB(**location, options));
+  rocksdb::Options options;
+  SetStatus(rocksdb::DestroyDB(**location, options));
 }
 
 /** REPAIR WORKER **/
@@ -42,8 +42,8 @@ RepairWorker::~RepairWorker () {
 }
 
 void RepairWorker::Execute () {
-  leveldb::Options options;
-  SetStatus(leveldb::RepairDB(**location, options));
+  rocksdb::Options options;
+  SetStatus(rocksdb::RepairDB(**location, options));
 }
 
 } // namespace leveldown

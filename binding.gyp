@@ -1,28 +1,15 @@
 {
     "targets": [{
-      "target_name": "leveldown"
+      "target_name": "flat-rocks"
     , "conditions": [
-          ["OS == 'win'", {
-              "defines": [
-                  "_HAS_EXCEPTIONS=0"
-              ]
-            , "msvs_settings": {
-                  "VCCLCompilerTool": {
-                      "RuntimeTypeInfo": "false"
-                    , "EnableFunctionLevelLinking": "true"
-                    , "ExceptionHandling": "2"
-                    , "DisableSpecificWarnings": [ "4355", "4530" ,"4267", "4244", "4506" ]
-                  }
-              }
-          }]
-        , ['OS == "linux"', {
+          ['OS == "linux"', {
               'cflags': [
               ]
             , 'cflags!': [ '-fno-tree-vrp' ]
           }]
         ]
-      , "dependencies": [
-            "<(module_root_dir)/deps/leveldb/leveldb.gyp:leveldb"
+      , "libraries": [
+            "librocksdb.dylib"
         ]
       , "include_dirs"  : [
             "<!(node -e \"require('nan')\")"

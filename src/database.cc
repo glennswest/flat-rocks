@@ -114,10 +114,9 @@ void Database::ReleaseIterator (uint32_t id) {
 void Database::CloseDatabase () {
   delete db;
   db = NULL;
-  if (blockCache) {
-    delete blockCache;
-    blockCache = NULL;
-  }
+
+  blockCache = NULL;
+
   if (filterPolicy) {
     delete filterPolicy;
     filterPolicy = NULL;

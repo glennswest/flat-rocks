@@ -21,7 +21,7 @@ namespace leveldown {
 OpenWorker::OpenWorker (
     Database *database
   , Nan::Callback *callback
-  , rocksdb::Cache* blockCache
+  , std::shared_ptr<rocksdb::Cache> blockCache
   , const rocksdb::FilterPolicy* filterPolicy
   , bool createIfMissing
   , bool errorIfExists

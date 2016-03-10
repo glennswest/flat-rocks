@@ -2,6 +2,7 @@ Flat Rocks
 =========
 
 <img alt="RocksDB Logo" height="100" src="http://rocksdb.org/wp-content/themes/rocksdb/rocksdb.png">
+_[Image © Copyright 2016, Facebook](http://rocksdb.org/)_
 
 **Native LevelUP bindings to RocksDB**
 

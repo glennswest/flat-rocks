@@ -1,7 +1,8 @@
 {
   "name": "flat-rocks",
   "description": "A Node.js RocksDB binding for LevelUP",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "author": "John Manero <john.manero@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/jmanero/flat-rocks.git"

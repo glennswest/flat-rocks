@@ -10,7 +10,7 @@
 #include <vector>
 #include <nan.h>
 
-#include "leveldown.h"
+#include "flatrocks.h"
 #include "database.h"
 #include "async.h"
 

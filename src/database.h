@@ -15,12 +15,12 @@
 #include <rocksdb/filter_policy.h>
 #include <nan.h>
 
-#include "leveldown.h"
+#include "flatrocks.h"
 #include "iterator.h"
 
 namespace flat_rocks {
 
-NAN_METHOD(LevelDOWN);
+NAN_METHOD(FlatRocks);
 
 struct Reference {
   Nan::Persistent<v8::Object> handle;

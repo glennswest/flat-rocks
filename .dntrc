@@ -11,7 +11,7 @@ IOJS_VERSIONS="\
   v2.3.4 \
   v3.0.0-rc.3 \
 "
-OUTPUT_PREFIX="leveldown-"
+OUTPUT_PREFIX="flat-rocks-"
 TEST_CMD="\
   cd /dnt/ &&                                                    \
   npm install &&                                                 \

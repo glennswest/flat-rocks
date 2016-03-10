@@ -2,8 +2,8 @@
  * See list at <https://github.com/level/leveldown#contributing>
  * MIT License <https://github.com/level/leveldown/blob/master/LICENSE.md>
  */
-#ifndef LD_LEVELDOWN_H
-#define LD_LEVELDOWN_H
+#ifndef LD_FLATROCKS_H
+#define LD_FLATROCKS_H
 
 #include <node.h>
 #include <node_buffer.h>

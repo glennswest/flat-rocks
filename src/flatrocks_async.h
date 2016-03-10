@@ -3,8 +3,8 @@
  * MIT License <https://github.com/level/leveldown/blob/master/LICENSE.md>
  */
 
-#ifndef LD_LEVELDOWN_ASYNC_H
-#define LD_LEVELDOWN_ASYNC_H
+#ifndef LD_FLATROCKS_ASYNC_H
+#define LD_FLATROCKS_ASYNC_H
 
 #include <node.h>
 

@@ -5,11 +5,11 @@
 
 #include <node.h>
 
-#include "leveldown.h"
+#include "flatrocks.h"
 #include "database.h"
 #include "iterator.h"
 #include "batch.h"
-#include "leveldown_async.h"
+#include "flatrocks_async.h"
 
 namespace flat_rocks {
 
@@ -54,22 +54,22 @@ void Init (v8::Local<v8::Object> target) {
   flat_rocks::Iterator::Init();
   flat_rocks::Batch::Init();
 
-  v8::Local<v8::Function> leveldown =
-      Nan::New<v8::FunctionTemplate>(LevelDOWN)->GetFunction();
+  v8::Local<v8::Function> flatrocks =
+      Nan::New<v8::FunctionTemplate>(FlatRocks)->GetFunction();
 
-  leveldown->Set(
+  flatrocks->Set(
       Nan::New("destroy").ToLocalChecked()
     , Nan::New<v8::FunctionTemplate>(DestroyDB)->GetFunction()
   );
 
-  leveldown->Set(
+  flatrocks->Set(
       Nan::New("repair").ToLocalChecked()
     , Nan::New<v8::FunctionTemplate>(RepairDB)->GetFunction()
   );
 
-  target->Set(Nan::New("leveldown").ToLocalChecked(), leveldown);
+  target->Set(Nan::New("flatrocks").ToLocalChecked(), flatrocks);
 }
 
-NODE_MODULE(leveldown, Init)
+NODE_MODULE(flatrocks, Init)
 
 } // namespace flat_rocks

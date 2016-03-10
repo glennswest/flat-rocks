@@ -5,8 +5,8 @@
 
 #include <rocksdb/db.h>
 
-#include "leveldown.h"
-#include "leveldown_async.h"
+#include "flatrocks.h"
+#include "flatrocks_async.h"
 
 namespace flat_rocks {
 

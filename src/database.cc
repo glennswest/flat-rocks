@@ -9,7 +9,7 @@
 #include <rocksdb/db.h>
 #include <rocksdb/write_batch.h>
 
-#include "leveldown.h"
+#include "flatrocks.h"
 #include "database.h"
 #include "async.h"
 #include "database_async.h"
@@ -121,7 +121,7 @@ void Database::CloseDatabase () {
 
 /* V8 exposed functions *****************************/
 
-NAN_METHOD(LevelDOWN) {
+NAN_METHOD(FlatRocks) {
   v8::Local<v8::String> location = info[0].As<v8::String>();
   info.GetReturnValue().Set(Database::NewInstance(location));
 }

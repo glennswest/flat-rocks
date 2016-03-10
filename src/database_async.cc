@@ -11,7 +11,7 @@
 #include <rocksdb/table.h>
 
 #include "database.h"
-#include "leveldown.h"
+#include "flatrocks.h"
 #include "async.h"
 #include "database_async.h"
 

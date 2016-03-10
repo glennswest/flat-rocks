@@ -1,32 +1,19 @@
 {
-  "name": "leveldown",
-  "description": "A Node.js LevelDB binding, primary backend for LevelUP",
-  "version": "1.4.4",
-  "contributors": [
-    "Rod Vagg <r@va.gg> (https://github.com/rvagg)",
-    "John Chesley <john@chesl.es> (https://github.com/chesles/)",
-    "Jake Verbaten <raynos2@gmail.com> (https://github.com/raynos)",
-    "Dominic Tarr <dominic.tarr@gmail.com> (https://github.com/dominictarr)",
-    "Max Ogden <max@maxogden.com> (https://github.com/maxogden)",
-    "Lars-Magnus Skog <ralphtheninja@riseup.net> (https://github.com/ralphtheninja)",
-    "David Björklund <david.bjorklund@gmail.com> (https://github.com/kesla)",
-    "Julian Gruber <julian@juliangruber.com> (https://github.com/juliangruber)",
-    "Paolo Fragomeni <paolo@async.ly> (https://github.com/hij1nx)",
-    "Anton Whalley <anton.whalley@nearform.com> (https://github.com/No9)",
-    "Matteo Collina <matteo.collina@gmail.com> (https://github.com/mcollina)",
-    "Pedro Teixeira <pedro.teixeira@gmail.com> (https://github.com/pgte)",
-    "James Halliday <mail@substack.net> (https://github.com/substack)"
-  ],
+  "name": "flat-rocks",
+  "description": "A Node.js RocksDB binding for LevelUP",
+  "version": "0.0.1",
   "repository": {
     "type": "git",
-    "url": "https://github.com/level/leveldown.git"
+    "url": "https://github.com/jmanero/flat-rocks.git"
   },
-  "homepage": "https://github.com/level/leveldown",
+  "homepage": "https://github.com/jmanero/flat-rocks",
   "keywords": [
-    "leveldb",
+    "rocksdb",
+    "leveldown",
+    "levelup",
     "level"
   ],
-  "main": "leveldown.js",
+  "main": "flat-rocks.js",
   "dependencies": {
     "abstract-leveldown": "~2.4.0",
     "bindings": "~1.2.1",

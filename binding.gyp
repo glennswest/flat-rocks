@@ -3,7 +3,10 @@
       "target_name": "flat-rocks"
     , "conditions": [
           ['OS == "linux"', {
-              'cflags': [
+           "libraries": [
+                 "/usr/local/lib/librocksdb.so"
+             ]
+              ,'cflags': [
               ]
             , 'cflags!': [ '-fno-tree-vrp' ]
           }]
@@ -18,15 +21,16 @@
                   ]
                 , 'GCC_ENABLE_CPP_EXCEPTIONS': 'YES'
                 , 'MACOSX_DEPLOYMENT_TARGET': '10.7'
+                , "libraries": [
+                      "/usr/local/lib/librocksdb.a"
+                  ]
               }
           }]
         ]
       , "cflags": [
             '-std=c++11'
         ]
-      , "libraries": [
-            "/usr/local/lib/librocksdb.so"
-        ]
+
       , "include_dirs"  : [
             "<!(node -e \"require('nan')\")"
         ]
